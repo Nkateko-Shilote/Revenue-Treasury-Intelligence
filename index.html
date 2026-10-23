@@ -1,8 +1,49 @@
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RTIP — Revenue & Treasury Intelligence</title><style>
 *{box-sizing:border-box}body{margin:0;font:14px Inter,Segoe UI,Arial;background:#f4f7fb;color:#172033}.app{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.side{background:#101c32;color:#cbd5e1;padding:22px 14px;position:sticky;top:0;height:100vh}.brand{padding:0 10px 20px;border-bottom:1px solid #2a3952}.brand b{color:white;font-size:20px}.brand small{display:block;color:#7dd3fc;margin-top:5px}.nav{margin-top:16px}.nav button{width:100%;border:0;background:transparent;color:#cbd5e1;text-align:left;padding:10px 12px;border-radius:7px;margin:2px 0;cursor:pointer}.nav button:hover,.nav button.active{background:#1e3558;color:white}.main{min-width:0}.top{background:white;border-bottom:1px solid #e2e8f0;padding:16px 24px;display:flex;justify-content:space-between;gap:15px;align-items:center;position:sticky;top:0;z-index:3}.title h1{font-size:20px;margin:0}.title small{color:#64748b}.demo{font-size:11px;background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;padding:6px 9px;border-radius:20px;font-weight:700}.controls{display:flex;gap:8px;align-items:center}select,button,input{font:inherit}.controls select,.filter{border:1px solid #cbd5e1;background:white;padding:8px;border-radius:7px}.content{padding:22px}.page{display:none}.page.active{display:block}.heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:16px}.heading h2{margin:0;font-size:22px}.heading p{margin:5px 0 0;color:#64748b}.grid{display:grid;gap:12px}.kpis{grid-template-columns:repeat(4,1fr)}.card{background:white;border:1px solid #e2e8f0;border-radius:10px;padding:15px;box-shadow:0 1px 2px #0f172a0a}.kpi small{color:#64748b}.kpi strong{display:block;font-size:22px;margin-top:7px}.kpi em{font-style:normal;font-size:11px;color:#059669}.two{grid-template-columns:1.5fr 1fr;margin-top:12px}.three{grid-template-columns:repeat(3,1fr)}.card h3{margin:0 0 12px;font-size:15px}.barrow{display:grid;grid-template-columns:125px 1fr 65px;gap:8px;align-items:center;margin:10px 0}.bar{height:8px;background:#e7edf5;border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:#1677a7;border-radius:8px}.brief{padding:10px 0;border-bottom:1px solid #edf2f7}.brief:last-child{border:0}.sev{display:inline-block;font-size:10px;font-weight:700;padding:3px 6px;border-radius:10px}.red{background:#fee2e2;color:#b91c1c}.amber{background:#fef3c7;color:#92400e}.green{background:#dcfce7;color:#166534}.blue{background:#dbeafe;color:#1d4ed8}table{width:100%;border-collapse:collapse;font-size:12px}th{text-align:left;color:#64748b;background:#f8fafc;padding:9px;border-bottom:1px solid #e2e8f0}td{padding:10px 9px;border-bottom:1px solid #edf2f7}tr:hover td{background:#f8fafc}.btn{border:1px solid #cbd5e1;background:white;padding:7px 10px;border-radius:6px;cursor:pointer}.btn.primary{background:#173b68;color:white;border-color:#173b68}.btn:active{transform:translateY(1px)}.workflow{display:flex;gap:4px;align-items:center;flex-wrap:wrap}.step{padding:5px 8px;background:#e2e8f0;border-radius:12px;font-size:10px}.step.done{background:#dcfce7;color:#166534}.step.now{background:#dbeafe;color:#1d4ed8;font-weight:700}.notice{padding:10px 12px;background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af;border-radius:8px;margin-bottom:14px}.municipards{grid-template-columns:repeat(3,1fr)}.muni{cursor:pointer}.muni:hover{border-color:#60a5fa;box-shadow:0 5px 18px #0f172a14}.muni h3{margin-bottom:5px}.muni p{color:#64748b;margin:3px 0}.money{font-size:20px;font-weight:700;margin:12px 0}.chart{height:180px;display:flex;align-items:end;gap:8px;padding-top:15px}.col{flex:1;background:linear-gradient(#38bdf8,#1d4ed8);border-radius:4px 4px 0 0;min-width:12px;position:relative}.col span{position:absolute;bottom:-20px;width:100%;text-align:center;font-size:9px;color:#64748b}.modal{display:none;position:fixed;inset:0;background:#0f172a99;z-index:20;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modalbox{background:white;border-radius:12px;max-width:760px;width:100%;max-height:85vh;overflow:auto;padding:20px}.modalhead{display:flex;justify-content:space-between}.close{border:0;background:#e2e8f0;border-radius:20px;width:30px;height:30px}.factor{display:flex;justify-content:space-between;border-bottom:1px solid #edf2f7;padding:8px 0}.pos{color:#047857}.neg{color:#b91c1c}.audit{font-family:ui-monospace,monospace;font-size:11px}.foot{color:#64748b;font-size:11px;margin-top:18px;text-align:center}.mobile{display:none}
+
+.view-toggle{display:flex;gap:5px;align-items:center}
+.view-toggle button{white-space:nowrap}
+.graph-toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.graph-toolbar label{font-size:12px;color:#475569;font-weight:600}
+.graph-toolbar select{border:1px solid #cbd5e1;border-radius:7px;padding:7px;background:#fff}
+.graph-stage{width:100%;overflow-x:auto}
+.graph-stage svg{display:block;width:100%;height:auto;min-width:650px;max-height:680px}
+.graph-key{display:inline-block;width:10px;height:10px;margin-right:5px;border-radius:3px}
+.graph-legend{display:flex;gap:15px;flex-wrap:wrap;font-size:12px;color:#475569;margin:12px 0 0}
+.graph-donut{height:160px;width:160px;display:grid;place-items:center;border-radius:100%;flex-shrink:0}
+.graph-donut-inner{height:116px;width:116px;background:white;border-radius:100%;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.graph-donut-inner strong{font-size:27px;color:#173b68}
+.graph-settle{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;min-height:230px}
+.graph-settle-label b{display:block;font-size:18px;color:#172033;margin:6px 0 16px}
+.graph-help{color:#64748b;font-size:11px;margin-top:12px}
+@media(max-width:900px){.heading:has(.view-toggle){flex-wrap:wrap;gap:10px}.graph-stage svg{width:680px}}
 @media(max-width:900px){.app{grid-template-columns:1fr}.side{display:none;position:fixed;z-index:10;width:260px}.side.open{display:block}.mobile{display:inline-block}.kpis,.municipards,.three,.two{grid-template-columns:1fr 1fr}.top{padding:12px}.content{padding:14px}}@media(max-width:600px){.kpis,.municipards,.three,.two{grid-template-columns:1fr}.controls select{max-width:130px}.title small{display:none}.content{padding:10px}table{min-width:700px}.scroll{overflow:auto}}
 </style></head><body><div class="app"><aside class="side" id="side"><div class="brand"><b>RTIP</b><small>Revenue & Treasury Intelligence</small></div><nav class="nav" id="nav"></nav></aside><main class="main"><header class="top"><button class="btn mobile" onclick="side.classList.toggle('open')">☰</button><div class="title"><h1>Revenue & Treasury Intelligence</h1><small>Municipal Electricity Revenue, Settlement & Treasury Control</small></div><div class="controls"><span class="demo">SIMULATED DEMO DATA</span><select id="role" onchange="roleChange()"><option>Executive</option><option>Treasury</option><option>Finance / Reconciliation</option><option>Operations</option><option>Municipality</option><option>Auditor</option></select></div></header><div class="content">
-<section class="page active" id="dashboard"><div class="heading"><div><h2>Executive Command Centre</h2><p>Daily revenue, settlement exposure and treasury position.</p></div><select class="filter"><option>Today</option><option>Yesterday</option><option>Last 7 days</option><option>Month to date</option></select></div><div class="grid kpis" id="kpis"></div><div class="grid two"><div class="card"><h3>Municipality revenue performance</h3><div id="perf"></div></div><div class="card"><h3>AI Treasury Brief</h3><div class="brief"><span class="sev red">CRITICAL</span> <b>Ekurhuleni bank variance</b><br><small>R184,300 shortfall has a matching unreferenced EFT. Reconcile before escalation.</small></div><div class="brief"><span class="sev amber">HIGH</span> <b>Polokwane approval pending</b><br><small>Weekly settlement prepared and reviewed; final approval remains outstanding.</small></div><div class="brief"><span class="sev amber">HIGH</span> <b>Postpaid float pressure</b><br><small>Ekurhuleni projected to require additional funding before afternoon peak.</small></div></div></div><div class="grid two"><div class="card"><h3>Intraday sales vs forecast</h3><div class="chart" id="chart"></div></div><div class="card"><h3>Control status</h3><div class="factor"><span>Settlements reconciled</span><b>6 / 10</b></div><div class="factor"><span>Open bank variances</span><b class="neg">4</b></div><div class="factor"><span>Failed token cases</span><b>2,995</b></div><div class="factor"><span>Forecast accuracy</span><b class="pos">92.1%</b></div><div class="factor"><span>Contracts nearing expiry</span><b>2</b></div></div></div></section>
+<section class="page active" id="dashboard"><div class="heading"><div><h2>Executive Command Centre</h2><p>Daily revenue, settlement exposure and treasury position.</p></div><div class="view-toggle"><button class="btn primary" id="overviewButton" onclick="toggleGraphView(false)">▦ Dashboard View</button><button class="btn" id="graphButton" onclick="toggleGraphView(true)">▥ Graph View</button></div><select class="filter"><option>Today</option><option>Yesterday</option><option>Last 7 days</option><option>Month to date</option></select></div><div class="grid kpis" id="kpis"></div><div id="overviewCharts"><div class="grid two"><div class="card"><h3>Municipality revenue performance</h3><div id="perf"></div></div><div class="card"><h3>AI Treasury Brief</h3><div class="brief"><span class="sev red">CRITICAL</span> <b>Ekurhuleni bank variance</b><br><small>R184,300 shortfall has a matching unreferenced EFT. Reconcile before escalation.</small></div><div class="brief"><span class="sev amber">HIGH</span> <b>Polokwane approval pending</b><br><small>Weekly settlement prepared and reviewed; final approval remains outstanding.</small></div><div class="brief"><span class="sev amber">HIGH</span> <b>Postpaid float pressure</b><br><small>Ekurhuleni projected to require additional funding before afternoon peak.</small></div></div></div><div class="grid two"><div class="card"><h3>Intraday sales vs forecast</h3><div class="chart" id="chart"></div></div><div class="card"><h3>Control status</h3><div class="factor"><span>Settlements reconciled</span><b>6 / 10</b></div><div class="factor"><span>Open bank variances</span><b class="neg">4</b></div><div class="factor"><span>Failed token cases</span><b>2,995</b></div><div class="factor"><span>Forecast accuracy</span><b class="pos">92.1%</b></div><div class="factor"><span>Contracts nearing expiry</span><b>2</b></div></div></div>
+</div><div id="graphView" hidden>
+  <div class="card" style="margin-top:12px">
+    <div class="graph-toolbar">
+      <label for="graphMetric">Compare</label>
+      <select id="graphMetric" onchange="renderGraphView()">
+        <option value="municipality">Municipality sales</option>
+        <option value="settlement">Municipal settlement vs payment</option>
+        <option value="merchant">Merchant sales</option>
+        <option value="postpaid">Postpaid funding</option>
+      </select>
+      <label for="graphType">Graph style</label>
+      <select id="graphType" onchange="renderGraphView()"><option value="bar">Bar graph</option><option value="line">Line graph</option></select>
+    </div>
+    <h3 id="graphTitle">Municipality sales</h3>
+    <div class="graph-stage" id="mainGraph" role="img" aria-label="Executive performance graph"></div>
+    <div class="graph-legend" id="graphLegend"></div>
+    <p class="graph-help">Amounts in R millions. Hover over graph values for detail. All values are simulated demo examples.</p>
+  </div>
+  <div class="grid two">
+    <div class="card"><h3>Settlements: paid vs outstanding</h3><div id="settlementSplit"></div></div>
+    <div class="card"><h3>Postpaid funding requirements</h3><div class="graph-stage" id="fundingComparison"></div><div class="graph-legend" id="fundingLegend"></div></div>
+  </div>
+  <div class="notice" style="margin-top:12px">SIMULATED DEMO DATA — Graphs do not represent live transaction, municipal or bank data.</div>
+</div></section>
 <section class="page" id="municipalities"><div class="heading"><div><h2>Municipality Intelligence</h2><p>South Africa → Province → Municipality → Merchant → Transaction → Meter</p></div></div><div class="grid municipards" id="munis"></div></section>
 <section class="page" id="settlements"><div class="heading"><div><h2>Settlement Control</h2><p>Prepared → Reviewed → Approved → Paid → Reconciled</p></div></div><div class="notice">Gross sales − reversals/refunds − agreed fees − permitted deductions = net payable. All workflow actions in this demo are simulated.</div><div class="card scroll"><table><thead><tr><th>Municipality</th><th>Gross Sales</th><th>Net Payable</th><th>Status</th><th>Workflow</th><th>Action</th></tr></thead><tbody id="settleRows"></tbody></table></div></section>
 <section class="page" id="reconciliation"><div class="heading"><div><h2>Bank Reconciliation</h2><p>Expected municipal obligations matched to bank settlement evidence.</p></div></div><div class="card scroll"><table><thead><tr><th>Reference</th><th>Municipality</th><th>Obligation</th><th>Bank Amount</th><th>Variance</th><th>SLA</th><th>Control</th></tr></thead><tbody id="bankRows"></tbody></table></div></section>
@@ -43,4 +84,51 @@ const als=[['Critical','Settlement mismatch','Emalahleni','Calculated obligation
 alertList.innerHTML=als.map(x=>'<div class="card" style="margin-bottom:9px"><span class="sev '+(x[0]=='Critical'?'red':'amber')+'">'+x[0].toUpperCase()+'</span> <b>'+x[1]+' · '+x[2]+'</b><p>'+x[3]+'</p><small><b>Recommended:</b> '+x[4]+'</small></div>').join('');
 let audits=[['06:05','system.scheduler','Settlement prepared','TSH/SETL/26-09-30'],['07:41','n.baloyi','Settlement reviewed','TSH/SETL/26-09-30'],['08:02','d.pretorius','Settlement approved','TSH/SETL/26-09-30'],['09:06','l.mthembu','Exception opened','AL-8801'],['10:22','n.baloyi','Variance logged','BR-5002'],['12:48','d.pretorius','Funding approved','PF-3101']];function drawAudit(){auditList.innerHTML=audits.map(x=>'<div class="factor"><span>'+x[0]+' · '+x[1]+'</span><b>'+x[2]+' · '+x[3]+'</b></div>').join('')}drawAudit();function log(a,e){audits.unshift([new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}),'demo.user',a,e]);drawAudit()}
 function roleChange(){const r=role.value;if(r==='Municipality'){alert('Municipality role selected: demonstration view would be restricted to the municipality’s own financial records.');showPage('municipalities',document.querySelectorAll('.nav button')[1])}}
+
+function toggleGraphView(isGraph){
+  document.getElementById('overviewCharts').hidden=isGraph;
+  document.getElementById('graphView').hidden=!isGraph;
+  overviewButton.classList.toggle('primary',!isGraph);
+  graphButton.classList.toggle('primary',isGraph);
+  if(isGraph)renderGraphView();
+}
+function graphSafe(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function graphMoney(n){return 'R '+Number(n).toFixed(2)+'m';}
+function graphKeys(series){return series.map(s=>'<span><i class="graph-key" style="background:'+s.color+'"></i>'+graphSafe(s.name)+'</span>').join('');}
+function graphDraw(labels,series,type){
+  const navy='#173b68',height=type==='line'?340:Math.max(235,labels.length*(series.length>1?49:38)+76);
+  const max=Math.max(1,...series.flatMap(s=>s.values))*1.16;
+  let parts=['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 '+height+'" aria-hidden="true">'];
+  if(type==='line'){
+    const l=60,r=857,t=28,b=260,ph=b-t;
+    for(let tick=0;tick<5;tick++){const y=b-tick*ph/4;parts.push('<line x1="'+l+'" y1="'+y+'" x2="'+r+'" y2="'+y+'" stroke="#e2e8f0"/><text x="'+(l-7)+'" y="'+(y+4)+'" font-size="11" text-anchor="end" fill="#64748b">'+(max*tick/4).toFixed(1)+'</text>');}
+    labels.forEach((label,i)=>{const x=l+(labels.length===1?.5:i/(labels.length-1))*(r-l);if(labels.length>7 && i%2 && i!==labels.length-1)return;parts.push('<text x="'+x+'" y="'+(b+22)+'" font-size="11" text-anchor="end" transform="rotate(-30 '+x+' '+(b+22)+')" fill="#64748b">'+graphSafe(label.slice(0,14))+'</text>');});
+    series.forEach(s=>{const coords=s.values.map((v,i)=>[l+(labels.length===1?.5:i/(labels.length-1))*(r-l),b-v/max*ph]);parts.push('<polyline points="'+coords.map(p=>p.join(',')).join(' ')+'" fill="none" stroke="'+s.color+'" stroke-width="3"/>');coords.forEach((p,i)=>parts.push('<circle cx="'+p[0]+'" cy="'+p[1]+'" r="5" fill="'+s.color+'" stroke="white" stroke-width="2"><title>'+graphSafe(labels[i]+' — '+s.name+' '+graphMoney(s.values[i]))+'</title></circle>'));});
+  }else{
+    const l=220,wide=610,top=31,row=(height-76)/labels.length;
+    for(let tick=0;tick<5;tick++){const x=l+tick*wide/4;parts.push('<line x1="'+x+'" y1="'+top+'" x2="'+x+'" y2="'+(height-38)+'" stroke="#e2e8f0"/><text x="'+x+'" y="'+(height-19)+'" font-size="11" text-anchor="middle" fill="#64748b">'+(max*tick/4).toFixed(1)+'</text>');}
+    labels.forEach((label,i)=>{const y=top+i*row;parts.push('<text x="'+(l-10)+'" y="'+(y+row/2+4)+'" text-anchor="end" font-size="11" fill="#334155">'+graphSafe(label.length>26?label.slice(0,25)+'…':label)+'</text>');const bh=series.length>1?15:20;const gh=series.length*bh+(series.length-1)*3;series.forEach((s,si)=>{const by=y+(row-gh)/2+si*(bh+3),len=s.values[i]/max*wide;parts.push('<rect x="'+l+'" y="'+by+'" width="'+len+'" height="'+bh+'" rx="4" fill="'+s.color+'"><title>'+graphSafe(label+' — '+s.name+' '+graphMoney(s.values[i]))+'</title></rect>');});});
+  }
+  return parts.join('')+'</svg>';
+}
+function renderGraphView(){
+  const navy='#173b68',teal='#0f766e',blue='#0284c7';
+  const merch=[['Capitec',14.8],['FNB',12.3],['SPAR',9.7],['Pick n Pay',8.4],['Shoprite',10.1],['Kazang',6.9],['Blu',5.4]];
+  const data={
+    municipality:{title:'Sales by municipality',labels:mun.map(x=>x[0].replace('City of ','').replace(' Local Municipality','').replace(' Metropolitan','')),series:[{name:'Sales',color:navy,values:mun.map(x=>x[3])}]},
+    settlement:{title:'Settlement obligations versus bank payments',labels:banks.map(x=>x[1].replace('City of ','')),series:[{name:'Obligation',color:navy,values:banks.map(x=>x[2])},{name:'Bank paid',color:teal,values:banks.map(x=>x[3])}]},
+    merchant:{title:'Electricity sales by merchant',labels:merch.map(x=>x[0]),series:[{name:'Sales',color:blue,values:merch.map(x=>x[1])}]},
+    postpaid:{title:'Postpaid funding — projected versus loaded',labels:funds.map(x=>x[0].replace('City of ','')),series:[{name:'Projected',color:navy,values:funds.map(x=>x[1])},{name:'Loaded',color:teal,values:funds.map(x=>x[3])}]}
+  };
+  const picked=data[graphMetric.value];
+  graphTitle.textContent=picked.title+' (R millions)';
+  mainGraph.innerHTML=graphDraw(picked.labels,picked.series,graphType.value);
+  graphLegend.innerHTML=graphKeys(picked.series);
+  const ratio=Math.round(48.11/(48.11+21.31)*100);
+  settlementSplit.innerHTML='<div class="graph-settle"><div class="graph-donut" style="background:conic-gradient('+navy+' '+ratio+'%,#cbd5e1 '+ratio+'%)"><div class="graph-donut-inner"><strong>'+ratio+'%</strong><small>Settled</small></div></div><div class="graph-settle-label"><div><i class="graph-key" style="background:'+navy+'"></i>Settled<b>R 48.11m</b></div><div><i class="graph-key" style="background:#cbd5e1"></i>Outstanding<b>R 21.31m</b></div></div></div>';
+  const series=data.postpaid.series;
+  fundingComparison.innerHTML=graphDraw(data.postpaid.labels,series,'bar');
+  fundingLegend.innerHTML=graphKeys(series);
+}
+
 </script></body></html>
